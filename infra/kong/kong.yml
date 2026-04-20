@@ -1,0 +1,77 @@
+_format_version: "3.0"
+_transform: true
+
+plugins:
+  - name: prometheus
+
+services:
+  - name: main-backend
+    url: http://backend:8080
+    plugins:
+      - name: rate-limiting
+        config:
+          minute: 120
+          policy: local
+    routes:
+      - name: main-backend-route
+        paths:
+          - /api/main
+        strip_path: true
+
+  - name: batch-backend
+    url: http://batch-backend:8081
+    plugins:
+      - name: rate-limiting
+        config:
+          minute: 60
+          policy: local
+    routes:
+      - name: batch-backend-route
+        paths:
+          - /api/batch
+        strip_path: true
+
+  - name: research-backend
+    url: http://research-backend:8083
+    plugins:
+      - name: rate-limiting
+        config:
+          minute: 90
+          policy: local
+    routes:
+      - name: research-backend-route
+        paths:
+          - /api/research
+        strip_path: true
+
+  - name: main-frontend
+    url: http://frontend:5173
+    routes:
+      - name: main-frontend-route
+        paths:
+          - /ui/main
+        strip_path: true
+
+  - name: batch-frontend
+    url: http://batch-frontend:5174
+    routes:
+      - name: batch-frontend-route
+        paths:
+          - /ui/batch
+        strip_path: true
+
+  - name: research-frontend
+    url: http://research-frontend:5175
+    routes:
+      - name: research-frontend-route
+        paths:
+          - /ui/research
+        strip_path: true
+
+consumers:
+  - username: jadiss-learn
+    custom_id: chart-learning-admin
+    jwt_secrets:
+      - key: jadiss-learn-key
+        algorithm: HS256
+        secret: jadiss-learn-jwt-secret-change-later

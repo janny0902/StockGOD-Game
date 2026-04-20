@@ -1,0 +1,58 @@
+name: stockgod-game
+
+services:
+  postgres:
+    image: postgres:14.12
+    container_name: stockgod-postgres
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      TZ: Asia/Seoul
+      PGTZ: Asia/Seoul
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "25432:5432"
+    volumes:
+      - stockgod-postgres-data:/var/lib/postgresql/data
+      - ./infra/postgres/init:/docker-entrypoint-initdb.d
+
+  backend:
+    build:
+      context: ./services/backend
+      dockerfile: Dockerfile
+    container_name: stockgod-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      SERVER_PORT: 8080
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      APP_ADMIN_USERNAME: ${APP_ADMIN_USERNAME}
+      APP_ADMIN_PASSWORD: ${APP_ADMIN_PASSWORD}
+    depends_on:
+      - postgres
+    ports:
+      - "28080:8080"
+
+  frontend:
+    build:
+      context: ./services/frontend
+      dockerfile: Dockerfile
+    container_name: stockgod-frontend
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      VITE_MAIN_API_BASE_URL: ${VITE_MAIN_API_BASE_URL}
+    depends_on:
+      - backend
+    ports:
+      - "25173:5173"
+
+volumes:
+  stockgod-postgres-data:

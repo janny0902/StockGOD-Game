@@ -1,0 +1,157 @@
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(78, 222, 163, 0.12) 0, transparent 28%),
+    radial-gradient(circle at 88% 16%, rgba(78, 222, 163, 0.08) 0, transparent 22%),
+    linear-gradient(180deg, #0b1326 0%, #070d1c 100%);
+  color: #dae2fd;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.shell {
+  max-width: 1460px;
+  margin: 0 auto;
+  padding: 1rem;
+  color: #dae2fd;
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin-bottom: 1rem;
+  padding: 0.95rem 1.1rem;
+  border-radius: 16px;
+  background: rgba(21, 29, 49, 0.88);
+  border: 1px solid rgba(134, 148, 138, 0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  margin: 0;
+  color: #4edea3;
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+}
+
+.sub {
+  margin: 0.2rem 0 0;
+  color: #8da3b6;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.top-links {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  text-decoration: none;
+  color: #8da3b6;
+  padding: 0.45rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.link.active {
+  color: #4edea3;
+  border-color: rgba(78, 222, 163, 0.3);
+  background: rgba(78, 222, 163, 0.08);
+}
+
+.view-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.45rem;
+  color: #4edea3;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.panel {
+  background: rgba(35, 42, 61, 0.85);
+  border: 1px solid rgba(134, 148, 138, 0.14);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.status {
+  margin: 0.7rem 0 0;
+  color: #8da3b6;
+}
+
+.chip {
+  padding: 0.55rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid rgba(134, 148, 138, 0.2);
+  background: #171f33;
+  color: #dae2fd;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: #4edea3;
+  color: #003824;
+}
+
+.cta {
+  padding: 0.9rem 1.4rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 900;
+  background: linear-gradient(135deg, #4edea3, #10b981);
+  color: #022113;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid rgba(134, 148, 138, 0.2);
+  background: #0a1020;
+  color: #dae2fd;
+}
+
+@media (max-width: 900px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

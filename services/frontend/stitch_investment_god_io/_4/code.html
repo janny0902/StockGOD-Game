@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Sovereign Exchange | God of Investment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(45, 52, 73, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(78, 222, 163, 0.05);
+        }
+        .chart-glow {
+            filter: drop-shadow(0 0 8px rgba(78, 222, 163, 0.3));
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#005236",
+                        "primary-fixed-dim": "#4edea3",
+                        "surface-container-high": "#222a3d",
+                        "on-primary-fixed": "#002113",
+                        "surface-container-highest": "#2d3449",
+                        "secondary": "#ffb2b7",
+                        "outline-variant": "#3c4a42",
+                        "surface-variant": "#2d3449",
+                        "on-error": "#690005",
+                        "inverse-surface": "#dae2fd",
+                        "on-secondary-container": "#ffc2c4",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-secondary-fixed-variant": "#92002a",
+                        "surface-container-low": "#131b2e",
+                        "surface-container-lowest": "#060e20",
+                        "surface-tint": "#4edea3",
+                        "surface-dim": "#0b1326",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#31394d",
+                        "secondary-fixed-dim": "#ffb2b7",
+                        "surface-container": "#171f33",
+                        "surface": "#0b1326",
+                        "outline": "#86948a",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "error-container": "#93000a",
+                        "on-surface": "#dae2fd",
+                        "primary-fixed": "#6ffbbe",
+                        "background": "#0b1326",
+                        "tertiary-container": "#e29100",
+                        "on-surface-variant": "#bbcabf",
+                        "on-tertiary-fixed": "#2a1700",
+                        "primary-container": "#10b981",
+                        "inverse-on-surface": "#283044",
+                        "tertiary": "#ffb95f",
+                        "on-tertiary": "#472a00",
+                        "inverse-primary": "#006c49",
+                        "primary": "#4edea3",
+                        "on-secondary": "#67001b",
+                        "on-primary": "#003824",
+                        "on-secondary-fixed": "#40000d",
+                        "on-primary-container": "#00422b",
+                        "secondary-container": "#b50036",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-tertiary-container": "#523200",
+                        "secondary-fixed": "#ffdadb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#0b1326] shadow-[0px_4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-[#4edea3] font-['Space_Grotesk']">The Sovereign Exchange</span>
+<div class="hidden md:flex gap-6 items-center">
+<span class="text-slate-400 hover:text-slate-200 cursor-pointer font-['Space_Grotesk'] text-sm tracking-tight transition-colors duration-300">Market</span>
+<span class="text-slate-400 hover:text-slate-200 cursor-pointer font-['Space_Grotesk'] text-sm tracking-tight transition-colors duration-300">Portfolio</span>
+<span class="text-[#4edea3] font-bold border-b-2 border-[#4edea3] pb-1 font-['Space_Grotesk'] text-sm tracking-tight">Intelligence</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-xl">
+<span class="material-symbols-outlined text-primary text-sm">account_circle</span>
+<span class="text-xs font-medium uppercase tracking-widest text-on-surface">Master Tier</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:bg-[#10b981]/10 p-2 rounded-full transition-colors">public</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:bg-[#10b981]/10 p-2 rounded-full transition-colors">notifications</span>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-screen py-8 fixed left-0 w-64 bg-gradient-to-r from-[#0b1326] to-[#0b1326]/80 z-40 pt-24">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3 mb-4">
+<img alt="Trader Avatar" class="w-12 h-12 rounded-xl object-cover ring-2 ring-primary/20" data-alt="Modern cyberpunk avatar of a professional trader with neon green accents and futuristic visor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGcb3_9zXCNbT6lSRapsxHS0lt6iFSBnj9TDdARzwy4wmqi5F7XbJHbTz9xNfQHA4i7_7MxVdAAnZ-qwuoy4h59SU3qDrVQMXFCmx1PpdFB36FN_u3LTNwAzn0RJzlHtNO8yoZi_0-NPcYFie7cSE2H7ZT7Ejn3iMAj1Qs1SNjE5jtXPoFojm4iWqbFwkbBYoix4wzYDRYNv7P93YkDJkT2qyUVKTHtt5Bkj-I5YBG6lISa1PG5TdMtnZbmDIgUn7uhMz5K1oUIA"/>
+<div>
+<h3 class="text-on-surface font-bold text-sm">The Sovereign</h3>
+<p class="text-primary text-[10px] font-black tracking-widest uppercase">Rank #42 | Master</p>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-black py-3 rounded-xl tracking-tighter hover:shadow-[0_0_15px_rgba(78,222,163,0.4)] transition-all scale-100 active:scale-95">EXECUTE TRADE</button>
+</div>
+<nav class="flex-1">
+<div class="flex items-center gap-4 text-slate-400 p-4 hover:bg-white/5 mx-4 rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
+<span class="font-medium text-xs font-['Inter'] uppercase tracking-wider">Market</span>
+</div>
+<div class="flex items-center gap-4 text-slate-400 p-4 hover:bg-white/5 mx-4 rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-medium text-xs font-['Inter'] uppercase tracking-wider">Portfolio</span>
+</div>
+<div class="flex items-center gap-4 text-slate-400 p-4 hover:bg-white/5 mx-4 rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="font-medium text-xs font-['Inter'] uppercase tracking-wider">Rankings</span>
+</div>
+<div class="flex items-center gap-4 text-slate-400 p-4 hover:bg-white/5 mx-4 rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-medium text-xs font-['Inter'] uppercase tracking-wider">History</span>
+</div>
+<div class="flex items-center gap-4 bg-[#4edea3]/10 text-[#4edea3] rounded-r-full p-4 border-l-4 border-[#4edea3] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-medium text-xs font-['Inter'] uppercase tracking-wider">Intelligence</span>
+</div>
+</nav>
+<div class="mt-auto px-4 pb-8 space-y-2">
+<div class="flex items-center gap-4 text-slate-400 p-4 hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-xs uppercase tracking-widest">Settings</span>
+</div>
+<div class="flex items-center gap-4 text-slate-400 p-4 hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="text-xs uppercase tracking-widest">Support</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-24 pb-20 px-6 min-h-screen space-y-6">
+<!-- Header: Session info & Status -->
+<header class="flex flex-col md:flex-row justify-between items-end md:items-center gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-primary font-headline text-lg font-bold">Round 1/15</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-on-surface-variant font-label text-sm">God Tier Trial</span>
+</div>
+<h1 class="text-4xl font-headline font-extrabold tracking-tighter text-on-surface">KOSPI 200 Index Fund</h1>
+</div>
+<div class="glass-panel px-6 py-4 rounded-xl flex items-center gap-8 border-l-4 border-primary">
+<div>
+<p class="text-[10px] text-slate-400 uppercase tracking-[0.2em] mb-1">Asset Status</p>
+<p class="text-primary font-headline font-bold text-xl">$1,420,500.00 <span class="text-xs font-normal text-on-surface-variant ml-2">+2.4%</span></p>
+</div>
+<div class="h-10 w-px bg-outline-variant/30"></div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase tracking-[0.2em] mb-1">Current Position</p>
+<p class="text-on-surface font-headline font-bold text-xl">10% <span class="text-[10px] text-on-surface-variant font-normal block uppercase">Invested at Market Price</span></p>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+<!-- Main Section: Professional Chart -->
+<section class="xl:col-span-8 space-y-4">
+<div class="bg-surface-container-low rounded-xl overflow-hidden border border-white/5 relative h-[500px]">
+<!-- Chart Tool Bar -->
+<div class="absolute top-4 left-4 right-4 z-10 flex justify-between items-center">
+<div class="flex gap-2 p-1 bg-surface-container-highest/80 backdrop-blur rounded-lg border border-white/5">
+<button class="px-3 py-1.5 text-[10px] font-bold rounded-md bg-primary text-on-primary">RSI</button>
+<button class="px-3 py-1.5 text-[10px] font-bold rounded-md text-slate-400 hover:bg-white/10">MACD</button>
+<button class="px-3 py-1.5 text-[10px] font-bold rounded-md text-slate-400 hover:bg-white/10">MOVING AVG</button>
+</div>
+<button class="p-2 bg-surface-container-highest/80 backdrop-blur rounded-lg border border-white/5 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-lg">settings</span>
+</button>
+</div>
+<!-- Candlestick Simulation Placeholder -->
+<div class="w-full h-full p-6 pt-20 flex items-end justify-between gap-1">
+<!-- Simulated candlestick bars with different heights and colors -->
+<div class="flex flex-col items-center justify-end h-full w-full opacity-80 relative overflow-hidden">
+<img alt="Market Chart" class="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-40" data-alt="Highly detailed dark professional financial candlestick chart with neon green and red bars against a dark grid background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALGJNUWBbCyKL9orctYZNk5BG29tx72Ytvf4KzFlIo1md_bvUqQjS4CvpV1bFA8GKRYx310Olh6pTs18-0xNzGlyCul5CqSKLUc6Nr1NdN5P8_21SDlV7yGdAKFE4SoB4rCKzV6ZCtP_fbiy2EAvgHe3OPtF_Es3_P159R6N3EmddXrh7zzP9QvrL-B4FN41iDoDnOgbYfMy_Ern1bEz8YdQHJxsgB1KLzfJiNaVLoIvIfAXbss4kT8qW4OZ6QzBnUPF2S330_pw"/>
+<!-- Visual overlay to mimic chart UI -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Reason Input Section -->
+<div class="bg-surface-container rounded-xl p-6 border border-white/5">
+<h3 class="text-xs font-black uppercase tracking-widest text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">psychology</span> Strategic Justification
+                    </h3>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-4 py-2 rounded-full border border-primary text-primary text-[10px] font-bold cursor-pointer hover:bg-primary/10 transition-colors">MACD Golden Cross</span>
+<span class="px-4 py-2 rounded-full border border-outline-variant text-slate-400 text-[10px] font-bold cursor-pointer hover:border-primary hover:text-primary transition-colors">RSI Oversold</span>
+<span class="px-4 py-2 rounded-full border border-outline-variant text-slate-400 text-[10px] font-bold cursor-pointer hover:border-primary hover:text-primary transition-colors">Trend Reversal</span>
+<span class="px-4 py-2 rounded-full border border-outline-variant text-slate-400 text-[10px] font-bold cursor-pointer hover:border-primary hover:text-primary transition-colors">Support Level</span>
+</div>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl p-4 text-sm text-on-surface placeholder:text-slate-600 focus:ring-1 focus:ring-primary focus:border-primary outline-none min-h-[100px] resize-none" placeholder="Detail the intelligence behind this maneuver..."></textarea>
+</div>
+</section>
+<!-- Decision Console -->
+<section class="xl:col-span-4 space-y-6">
+<!-- Decision Buttons -->
+<div class="bg-surface-container rounded-2xl p-6 border border-white/5 space-y-4">
+<h3 class="text-xs font-black uppercase tracking-widest text-on-surface-variant text-center mb-2">Primary Directive</h3>
+<button class="w-full group relative overflow-hidden rounded-xl bg-primary-container p-5 transition-all hover:shadow-[0_0_30px_rgba(78,222,163,0.3)] active:scale-95">
+<div class="flex items-center justify-between relative z-10">
+<div class="text-left">
+<span class="block text-[10px] font-black text-on-primary-container/60 uppercase tracking-widest">Action</span>
+<span class="text-2xl font-headline font-extrabold text-on-primary-container">BUY</span>
+</div>
+<span class="text-xs font-medium text-on-primary-container/80 bg-black/10 px-3 py-1 rounded-full">+ Exposure</span>
+</div>
+</button>
+<button class="w-full group relative overflow-hidden rounded-xl bg-surface-container-highest p-5 border border-white/5 transition-all hover:bg-surface-bright active:scale-95">
+<div class="flex items-center justify-between relative z-10">
+<div class="text-left">
+<span class="block text-[10px] font-black text-slate-400 uppercase tracking-widest">Action</span>
+<span class="text-2xl font-headline font-extrabold text-on-surface">HOLD</span>
+</div>
+<span class="text-xs font-medium text-on-surface-variant bg-black/10 px-3 py-1 rounded-full">Maintain 10%</span>
+</div>
+</button>
+<button class="w-full group relative overflow-hidden rounded-xl bg-secondary-container p-5 transition-all hover:shadow-[0_0_30px_rgba(255,178,183,0.3)] active:scale-95">
+<div class="flex items-center justify-between relative z-10">
+<div class="text-left">
+<span class="block text-[10px] font-black text-on-secondary-container/60 uppercase tracking-widest">Action</span>
+<span class="text-2xl font-headline font-extrabold text-on-secondary-container">SELL</span>
+</div>
+<span class="text-xs font-medium text-on-secondary-container/80 bg-black/10 px-3 py-1 rounded-full">Liquidate</span>
+</div>
+</button>
+</div>
+<!-- Strategy Period Selection -->
+<div class="bg-surface-container rounded-2xl p-6 border border-white/5">
+<h3 class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-4">Maturity Horizon</h3>
+<div class="grid grid-cols-5 gap-2">
+<button class="py-3 text-[10px] font-bold rounded-lg border border-outline-variant text-slate-400 hover:border-primary hover:text-primary transition-all">1D</button>
+<button class="py-3 text-[10px] font-bold rounded-lg border border-primary bg-primary/5 text-primary">3D</button>
+<button class="py-3 text-[10px] font-bold rounded-lg border border-outline-variant text-slate-400 hover:border-primary hover:text-primary transition-all">1W</button>
+<button class="py-3 text-[10px] font-bold rounded-lg border border-outline-variant text-slate-400 hover:border-primary hover:text-primary transition-all">2W</button>
+<button class="py-3 text-[10px] font-bold rounded-lg border border-outline-variant text-slate-400 hover:border-primary hover:text-primary transition-all">1M</button>
+</div>
+</div>
+<!-- Calendar Widget -->
+<div class="bg-surface-container rounded-2xl p-6 border border-white/5">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Execution Date</h3>
+<span class="text-[10px] font-bold text-primary font-headline tracking-tighter uppercase">October 2024</span>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<span class="text-[8px] text-slate-500 font-bold">S</span>
+<span class="text-[8px] text-slate-500 font-bold">M</span>
+<span class="text-[8px] text-slate-500 font-bold">T</span>
+<span class="text-[8px] text-slate-500 font-bold">W</span>
+<span class="text-[8px] text-slate-500 font-bold">T</span>
+<span class="text-[8px] text-slate-500 font-bold">F</span>
+<span class="text-[8px] text-slate-500 font-bold">S</span>
+</div>
+<div class="grid grid-cols-7 gap-1">
+<!-- Simulated Calendar Days -->
+<div class="h-8 flex items-center justify-center text-[10px] text-slate-600">26</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-slate-600">27</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-slate-600">28</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-slate-600">29</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-slate-600">30</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-on-surface">1</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-on-surface">2</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-on-surface">3</div>
+<div class="h-8 flex items-center justify-center text-[10px] rounded-lg bg-primary/20 text-primary border border-primary font-bold">4</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-on-surface">5</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-on-surface">6</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-on-surface">7</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-on-surface">8</div>
+<div class="h-8 flex items-center justify-center text-[10px] text-on-surface">9</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="fixed bottom-0 w-full px-8 py-3 flex justify-between items-center z-40 bg-[#0b1326]/60 backdrop-blur-xl border-t border-[#4edea3]/10">
+<p class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-500">
+            © 2024 SOVEREIGN EXCHANGE | SYSTEM STATUS: <span class="text-[#4edea3]">OPTIMAL</span>
+</p>
+<div class="flex gap-6">
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-500 hover:text-[#4edea3] transition-colors cursor-pointer">AI Data Disclosure</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-500 hover:text-[#4edea3] transition-colors cursor-pointer">Market Protocol</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-500 hover:text-[#4edea3] transition-colors cursor-pointer">Privacy Void</span>
+</div>
+</footer>
+</body></html>

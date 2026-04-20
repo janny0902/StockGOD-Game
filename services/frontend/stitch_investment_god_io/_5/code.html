@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Indicator Settings - Sovereign Exchange</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#005236",
+                    "surface-container": "#171f33",
+                    "tertiary-container": "#e29100",
+                    "surface-tint": "#4edea3",
+                    "on-primary-fixed": "#002113",
+                    "error-container": "#93000a",
+                    "outline": "#86948a",
+                    "on-background": "#dae2fd",
+                    "on-error-container": "#ffdad6",
+                    "surface": "#0b1326",
+                    "on-tertiary-container": "#523200",
+                    "tertiary-fixed": "#ffddb8",
+                    "primary-fixed-dim": "#4edea3",
+                    "on-secondary-container": "#ffc2c4",
+                    "secondary-container": "#b50036",
+                    "primary-fixed": "#6ffbbe",
+                    "on-secondary-fixed": "#40000d",
+                    "tertiary": "#ffb95f",
+                    "error": "#ffb4ab",
+                    "surface-container-lowest": "#060e20",
+                    "on-surface": "#dae2fd",
+                    "primary": "#4edea3",
+                    "on-surface-variant": "#bbcabf",
+                    "on-primary-container": "#00422b",
+                    "secondary-fixed": "#ffdadb",
+                    "background": "#0b1326",
+                    "surface-container-highest": "#2d3449",
+                    "surface-variant": "#2d3449",
+                    "inverse-surface": "#dae2fd",
+                    "secondary": "#ffb2b7",
+                    "on-secondary-fixed-variant": "#92002a",
+                    "surface-bright": "#31394d",
+                    "secondary-fixed-dim": "#ffb2b7",
+                    "inverse-primary": "#006c49",
+                    "on-secondary": "#67001b",
+                    "inverse-on-surface": "#283044",
+                    "on-primary": "#003824",
+                    "surface-dim": "#0b1326",
+                    "surface-container-low": "#131b2e",
+                    "on-tertiary": "#472a00",
+                    "surface-container-high": "#222a3d",
+                    "on-error": "#690005",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "primary-container": "#10b981",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-tertiary-fixed": "#2a1700",
+                    "outline-variant": "#3c4a42"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest font-body text-on-surface min-h-screen flex items-center justify-center p-4">
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-xl z-0"></div>
+<!-- Main Modal Container -->
+<div class="relative z-10 w-full max-w-4xl bg-surface border border-outline-variant/20 rounded-xl overflow-hidden shadow-[0px_24px_48px_rgba(0,0,0,0.4)] flex flex-col md:flex-row h-[600px]">
+<!-- Sidebar Navigation (From Shared Components Logic) -->
+<aside class="bg-surface-container-low w-full md:w-64 flex flex-col h-full py-8">
+<div class="px-6 mb-8">
+<h2 class="text-lg font-headline font-bold text-on-surface tracking-tight">Indicators</h2>
+<p class="text-xs text-on-surface-variant font-medium opacity-70">Technical Analysis</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Moving Averages (Active) -->
+<button class="flex items-center w-full px-6 py-3 space-x-3 bg-primary/10 text-primary border-r-4 border-primary transition-colors duration-150">
+<span class="material-symbols-outlined text-xl" data-icon="show_chart">show_chart</span>
+<span class="text-sm font-medium">Moving Averages</span>
+</button>
+<!-- RSI (Inactive) -->
+<button class="flex items-center w-full px-6 py-3 space-x-3 text-on-surface opacity-70 hover:bg-surface-container-high hover:opacity-100 transition-colors duration-150">
+<span class="material-symbols-outlined text-xl" data-icon="Insights">insights</span>
+<span class="text-sm font-medium">RSI</span>
+</button>
+<!-- MACD (Inactive) -->
+<button class="flex items-center w-full px-6 py-3 space-x-3 text-on-surface opacity-70 hover:bg-surface-container-high hover:opacity-100 transition-colors duration-150">
+<span class="material-symbols-outlined text-xl" data-icon="stacked_line_chart">stacked_line_chart</span>
+<span class="text-sm font-medium">MACD</span>
+</button>
+<!-- Bollinger Bands (Inactive) -->
+<button class="flex items-center w-full px-6 py-3 space-x-3 text-on-surface opacity-70 hover:bg-surface-container-high hover:opacity-100 transition-colors duration-150">
+<span class="material-symbols-outlined text-xl" data-icon="blur_circular">blur_circular</span>
+<span class="text-sm font-medium">Bollinger Bands</span>
+</button>
+</nav>
+<div class="px-6 pt-6 mt-auto border-t border-outline-variant/10">
+<div class="bg-surface-variant/40 rounded-lg p-3 flex items-center space-x-3">
+<div class="w-8 h-8 rounded bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] uppercase tracking-wider font-bold text-primary">AI Suggestion</p>
+<p class="text-[11px] text-on-surface-variant">SMA 200 Cross strategy</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col bg-surface overflow-hidden">
+<!-- Header (From TopAppBar Logic) -->
+<header class="flex justify-between items-center w-full px-8 py-6 border-b border-outline-variant/10">
+<h1 class="text-xl font-headline font-bold text-on-surface tracking-tight">Moving Averages</h1>
+<div class="flex items-center space-x-4">
+<span class="text-xs text-on-surface-variant font-medium">Master Switch</span>
+<button class="w-10 h-5 bg-primary rounded-full relative flex items-center transition-all px-0.5">
+<div class="w-4 h-4 bg-on-primary rounded-full ml-auto shadow-sm"></div>
+</button>
+</div>
+</header>
+<!-- Scrollable Settings Canvas -->
+<div class="flex-1 overflow-y-auto px-8 py-6 space-y-8 scrollbar-hide">
+<!-- Section 1: Simple Moving Average -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(78,222,163,0.6)]"></div>
+<h3 class="font-headline font-semibold text-on-surface">Simple Moving Average (SMA)</h3>
+</div>
+<span class="text-[10px] font-bold text-primary px-2 py-0.5 bg-primary/10 rounded">ACTIVE</span>
+</div>
+<div class="grid grid-cols-2 gap-6 bg-surface-container-low p-5 rounded-xl border border-outline-variant/5">
+<div class="space-y-2">
+<label class="text-xs font-medium text-on-surface-variant">Period (Length)</label>
+<div class="relative">
+<input class="w-full bg-surface-container-high border-none rounded-lg py-2.5 px-4 text-on-surface focus:ring-1 focus:ring-primary font-mono text-sm" type="number" value="50"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-on-surface-variant">DAYS</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-medium text-on-surface-variant">Source Price</label>
+<select class="w-full bg-surface-container-high border-none rounded-lg py-2.5 px-4 text-on-surface focus:ring-1 focus:ring-primary text-sm appearance-none">
+<option>Close</option>
+<option>Open</option>
+<option>High</option>
+<option>Low</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-medium text-on-surface-variant">Line Color</label>
+<div class="flex space-x-2">
+<button class="w-8 h-8 rounded-full border-2 border-primary bg-primary ring-2 ring-offset-2 ring-offset-surface-container-low ring-primary/20"></button>
+<button class="w-8 h-8 rounded-full bg-secondary"></button>
+<button class="w-8 h-8 rounded-full bg-tertiary"></button>
+<button class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-xs" data-icon="palette">palette</span>
+</button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-medium text-on-surface-variant">Line Style</label>
+<div class="flex bg-surface-container-high rounded-lg p-1">
+<button class="flex-1 py-1.5 rounded-md bg-surface-container-highest text-primary shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="linear_scale">linear_scale</span>
+</button>
+<button class="flex-1 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-sm" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Exponential Moving Average -->
+<section class="space-y-4 opacity-60 grayscale-[0.5] hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-2 h-2 rounded-full bg-on-surface-variant"></div>
+<h3 class="font-headline font-semibold text-on-surface">Exponential Moving Average (EMA)</h3>
+</div>
+<button class="w-8 h-4 bg-surface-container-highest rounded-full relative flex items-center px-0.5">
+<div class="w-3 h-3 bg-outline-variant rounded-full"></div>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-6 bg-surface-container-low p-5 rounded-xl border border-outline-variant/5">
+<div class="space-y-2">
+<label class="text-xs font-medium text-on-surface-variant">Period (Length)</label>
+<input class="w-full bg-surface-container-high/50 border-none rounded-lg py-2.5 px-4 text-on-surface/50 font-mono text-sm cursor-not-allowed" disabled="" type="number" value="200"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-medium text-on-surface-variant">Smoothing</label>
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-not-allowed" disabled="" type="range"/>
+</div>
+</div>
+</section>
+<!-- Pro Badge CTA -->
+<div class="relative rounded-xl p-6 overflow-hidden bg-surface-container-high">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent"></div>
+<div class="relative flex items-center justify-between">
+<div class="space-y-1">
+<h4 class="text-sm font-bold font-headline text-on-surface flex items-center">
+<span class="material-symbols-outlined text-primary mr-2" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                Multi-Asset Overlay
+                            </h4>
+<p class="text-[11px] text-on-surface-variant max-w-[220px]">Overlay Bitcoin moving averages on any trading pair.</p>
+</div>
+<button class="text-[10px] font-black uppercase tracking-widest bg-primary text-on-primary px-4 py-2 rounded-full shadow-[0_4px_12px_rgba(78,222,163,0.3)]">Upgrade</button>
+</div>
+</div>
+</div>
+<!-- Footer Actions (Transactional Suppression of Nav) -->
+<footer class="px-8 py-6 bg-surface-container-low/50 border-t border-outline-variant/10 flex items-center justify-between">
+<button class="text-xs font-bold text-on-surface-variant hover:text-on-surface transition-colors flex items-center">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="refresh">refresh</span>
+                    Reset to Defaults
+                </button>
+<div class="flex items-center space-x-3">
+<button class="px-6 py-2.5 rounded-lg text-sm font-bold text-on-surface-variant hover:bg-surface-container-high transition-all">Cancel</button>
+<button class="px-8 py-2.5 rounded-lg text-sm font-bold bg-primary text-on-primary shadow-[0_8px_20px_rgba(78,222,163,0.2)] hover:shadow-[0_8px_24px_rgba(78,222,163,0.4)] active:scale-95 transition-all">Apply Changes</button>
+</div>
+</footer>
+</main>
+</div>
+<!-- UI Background Texture (Purely decorative) -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1]">
+<div class="h-full w-full bg-[radial-gradient(#4edea3_1px,transparent_1px)] [background-size:24px_24px]"></div>
+</div>
+</body></html>

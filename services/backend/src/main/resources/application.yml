@@ -1,0 +1,22 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/cldc_ai_collector}
+    username: ${SPRING_DATASOURCE_USERNAME:jadiss-learn}
+    password: ${SPRING_DATASOURCE_PASSWORD:jadiss-learn1202#$}
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+app:
+  admin:
+    username: ${APP_ADMIN_USERNAME:jadiss-learn}
+    password: ${APP_ADMIN_PASSWORD:jadiss-learn1202#$}
