@@ -34,3 +34,9 @@
 ## 비고
 - 플랫폼 저장소(gemma4-fork)에서 서브모듈로 연결해 운영할 수 있습니다.
 - 공개 저장소에서는 실 비밀번호/토큰을 커밋하지 마세요.
+
+## 임시 암호화 운용
+- 민감 설정 원본은 `secrets/encrypted/application.yml.enc`에 암호화되어 보관됩니다.
+- 공개용 평문 설정은 `change-me` 기본값으로 유지됩니다.
+- 복호화: `./scripts/decrypt-secrets.ps1 -Passphrase "<암호문구>"`
+- 재암호화: `./scripts/encrypt-secrets.ps1 -Passphrase "<암호문구>"`
